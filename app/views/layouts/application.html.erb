@@ -2,13 +2,48 @@
 <html>
 <head>
   <title>Treebook</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+
+<nav class="navbar navbar-inverse" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		 <a>
+		 	<%= link_to 'Treebook', root_path , class: "navbar-brand" %>
+		 </a>	
+	</div>
+
+		<% if user_signed_in? %>
+			<%= render 'layouts/headerlogged' %>
+		<% else %>
+			<%= render 'layouts/header' %>
+		<% end %>
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+
+<%= render 'layouts/message' %>
+
+
+
+
 <%= yield %>
+
+
+</div>
+
 
 </body>
 </html>

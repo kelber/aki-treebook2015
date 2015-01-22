@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
     root 'statuses#index'
 
+  get '/register' , to: 'devise/registration#new', as: :register
+
+
+  get '/:feed', to: 'statuses#index', as: :feed
 
 end

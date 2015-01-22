@@ -23,6 +23,7 @@ class StatusesController < ApplicationController
   def create
     @status = current_user.statuses.new(status_params)
     @status.save
+      flash[:success] = "Cadastrado com sucesso" 
     respond_with(@status)
   end
 
