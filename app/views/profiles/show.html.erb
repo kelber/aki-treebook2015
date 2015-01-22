@@ -1,0 +1,10 @@
+<h1> Profile from: <%= @user.full_name %></h1>
+<hr>
+
+<% @statuses.each do |status| %>
+    <h3><%= link_to status.name , status %></h3>
+    <hr>
+
+<% end %>
+
+
